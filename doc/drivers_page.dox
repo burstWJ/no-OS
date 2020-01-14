@@ -100,6 +100,10 @@ The following sections contain code documentation for ADI no-OS drivers.
 - \link_to_subdir{/drivers/mux/adgs1408 "ADGS1408"}: SPI Interface, 4 Ω RON, ±15 V/+12 V/±5 V, 1.8 V Logic Control, 8:1/Dual 4:1 Muxes
 - \link_to_subdir{/drivers/mux/adgs5412 "ADGS5412"}: SPI Interface, 4× SPST Switches, 9.8 Ω RON, ±20 V/+36 V, Mux Configurable 
 
+\section photo-electronic Photo-Electronic
+
+- \link_to_subdir{/drivers/photo-electronic/adpd188 "ADPD188"}: Integrated Optical Module for Smoke Detection
+
 \section platform Platform Drivers
 
 - \link_to_subdir{/drivers/platform/aducm3029 "ADuCM3029"} Platform Drivers
