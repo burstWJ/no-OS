@@ -39,6 +39,16 @@ SRCS += $(DRIVERS)/axi_core/axi_adc_core/axi_adc_core.c			\
 	$(DRIVERS)/axi_core/axi_dmac/axi_dmac.c				\
 	$(DRIVERS)/axi_core/jesd204/axi_jesd204_rx.c			\
 	$(DRIVERS)/axi_core/jesd204/axi_jesd204_tx.c
+ifdef (TINYIIOD)
+	SRCS += $(NO-OS)/util/xml.c					\
+	$(NO-OS)/util/fifo.c						\
+	$(NO-OS)/iio/iio.c						\
+	$(NO-OS)/iio/iio_axi_adc/iio_axi_adc.c				\
+	$(NO-OS)/iio/iio_axi_dac/iio_axi_dac.c				\
+	$(NO-OS)/iio/iio_app/iio_app.c					\
+	$(NO-OS)/iio/iio_app/iio_axi_adc_app.c				\
+	$(NO-OS)/iio/iio_app/iio_axi_dac_app.c
+endif
 SRCS +=	$(NO-OS)/util/util.c
 ifeq (xilinx,$(strip $(PLATFORM)))
 SRCS += $(DRIVERS)/axi_core/jesd204/xilinx_transceiver.c		\
@@ -114,3 +124,16 @@ INCS +=	$(INCLUDE)/axi_io.h						\
 	$(INCLUDE)/error.h						\
 	$(INCLUDE)/delay.h						\
 	$(INCLUDE)/util.h
+ifeq (Y,$(strip $(TINYIIOD)))
+INCS +=	$(INCLUDE)/xml.h						\
+	$(INCLUDE)/util.h						\
+	$(NO-OS)/iio/iio.h						\
+	$(NO-OS)/iio/iio_types.h					\
+	$(NO-OS)/iio/iio_axi_adc/iio_axi_adc.h				\
+	$(NO-OS)/iio/iio_axi_dac/iio_axi_dac.h				\
+	$(NO-OS)/iio/iio_app/iio_app.h					\
+	$(NO-OS)/iio/iio_app/iio_axi_adc_app.h				\
+	$(NO-OS)/iio/iio_app/iio_axi_dac_app.h				\
+	$(NO-OS)/libraries/libtinyiiod/tinyiiod.h			\
+	$(NO-OS)/libraries/libtinyiiod/compat.h
+endif
